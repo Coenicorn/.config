@@ -1,6 +1,7 @@
 #!/bin/bash
 
-MON="DP-1-1"    # Discover monitor name with: xrandr | grep " connected"
+# MON="eDP-1"    # Discover monitor name with: xrandr | grep " connected"
+MON=$($HOME/.config/i3/scripts/get_active_monitor.bash)
 STEP=5          # Step Up/Down brightnes by: 5 = ".05", 10 = ".10", etc.
 
 CurrBright=$( xrandr --verbose --current | grep ^"$MON" -A5 | tail -n1 )
